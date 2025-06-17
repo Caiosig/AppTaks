@@ -1,0 +1,17 @@
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\bin\Debug\net8.0\Infra.deps.json
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\bin\Debug\net8.0\Infra.runtimeconfig.json
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\bin\Debug\net8.0\Infra.dll
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\bin\Debug\net8.0\Infra.pdb
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\bin\Debug\net8.0\Domain.dll
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\bin\Debug\net8.0\Domain.pdb
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.csproj.AssemblyReference.cache
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.AssemblyInfoInputs.cache
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.AssemblyInfo.cs
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.csproj.CoreCompileInputs.cache
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.csproj.Up2Date
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.dll
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\refint\Infra.dll
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.pdb
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.genruntimeconfig.cache
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\ref\Infra.dll

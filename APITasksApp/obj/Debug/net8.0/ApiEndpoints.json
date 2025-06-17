@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "APITasksApp.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "User/Create-User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.UserCQ.Commands.CreateUserCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.UserCQ.ViewModels.UserInfoViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
