@@ -11,6 +11,8 @@ var configuration = builder.Configuration;
 builder.AddServices();
 builder.AddDbContext();
 builder.AddFluentValidation();
+builder.AddMappings();
+builder.AddSwaggerDocs();
 
 var app = builder.Build();
 

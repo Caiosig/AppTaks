@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Tasks App API",
-    "description": "Um aplicativo de tarefas baseados no Trello e escrita em ASP.NET Core V8",
+    "description": "Um aplicativo de tarefas baseados no Trello e esscrita em ASP.NET",
     "contact": {
       "name": "Caio da Silva Godinho",
       "url": "https://example.com/contact"
@@ -19,10 +19,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Rota responsavel por criar um novo usuário.",
-        "description": "Exemplo de request:\r\n```\r\nPOST /User/Create-User\r\n{\r\n \"name\": \"Caio\",\r\n \"surname\": \"Godinho\",   \r\n \"username\": \"caiosig\",\r\n \"email\": \"teste@teste.com\",\r\n \"password\": \"123456\"\r\n}\r\n```",
         "requestBody": {
-          "description": "Um objeto CreateUserCommand",
           "content": {
             "application/json": {
               "schema": {
@@ -43,7 +40,7 @@
         },
         "responses": {
           "200": {
-            "description": "Retorna os dados do usuário criado.",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -61,9 +58,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Se houver erros de validação no comando."
           }
         }
       }
