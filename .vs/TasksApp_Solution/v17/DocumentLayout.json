@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\apitasksapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\apitasksapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +31,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "APITasksApp\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Controllers\\UserController.cs",
+              "RelativeToolTip": "APITasksApp\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T14:35:14.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "APITasksApp",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\APITasksApp.csproj",
+              "RelativeDocumentMoniker": "APITasksApp\\APITasksApp.csproj",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\APITasksApp.csproj",
+              "RelativeToolTip": "APITasksApp\\APITasksApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-23T14:31:04.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuilderExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\BuilderExtensions.cs",
+              "RelativeDocumentMoniker": "APITasksApp\\BuilderExtensions.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\BuilderExtensions.cs",
+              "RelativeToolTip": "APITasksApp\\BuilderExtensions.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwCMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T14:17:38.25Z",
+              "EditorCaption": ""
             }
           ]
         }
