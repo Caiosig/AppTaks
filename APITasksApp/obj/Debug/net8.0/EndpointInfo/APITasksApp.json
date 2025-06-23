@@ -1,8 +1,17 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "APITasksApp",
-    "version": "1.0"
+    "title": "Tasks App API",
+    "description": "Um aplicativo de tarefas baseados no Trello e escrita em ASP.NET Core V8",
+    "contact": {
+      "name": "Caio da Silva Godinho",
+      "url": "https://example.com/contact"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://example.com/license"
+    },
+    "version": "V1"
   },
   "paths": {
     "/User/Create-User": {
@@ -10,7 +19,10 @@
         "tags": [
           "User"
         ],
+        "summary": "Rota responsavel por criar um novo usuário.",
+        "description": "Exemplo de request:\r\n```\r\nPOST /User/Create-User\r\n{\r\n \"name\": \"Caio\",\r\n \"surname\": \"Godinho\",   \r\n \"username\": \"caiosig\",\r\n \"email\": \"teste@teste.com\",\r\n \"password\": \"123456\"\r\n}\r\n```",
         "requestBody": {
+          "description": "Um objeto CreateUserCommand",
           "content": {
             "application/json": {
               "schema": {
@@ -31,7 +43,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retorna os dados do usuário criado.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -49,6 +61,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Se houver erros de validação no comando."
           }
         }
       }

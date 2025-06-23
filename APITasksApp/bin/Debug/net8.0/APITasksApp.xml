@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APITasksApp</name>
+    </assembly>
+    <members>
+        <member name="M:APITasksApp.Controllers.UserController.CreateUser(Application.UserCQ.Commands.CreateUserCommand)">
+            <summary>
+            Rota responsavel por criar um novo usuário.
+            </summary>
+            <param name="command">
+            Um objeto CreateUserCommand
+            </param>
+            <returns>Os dados usuário criado</returns>
+            <remarks>
+            Exemplo de request:
+            ```
+            POST /User/Create-User
+            {
+             "name": "Caio",
+             "surname": "Godinho",   
+             "username": "caiosig",
+             "email": "teste@teste.com",
+             "password": "123456"
+            }
+            ```
+             </remarks>
+             <response code="200">Retorna os dados do usuário criado.</response>
+             <response code="400">Se houver erros de validação no comando.</response>
+        </member>
+    </members>
+</doc>
