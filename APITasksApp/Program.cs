@@ -13,6 +13,7 @@ builder.AddDbContext();
 builder.AddFluentValidation();
 builder.AddMappings();
 builder.AddSwaggerDocs();
+builder.AddJwtAuth();
 
 var app = builder.Build();
 

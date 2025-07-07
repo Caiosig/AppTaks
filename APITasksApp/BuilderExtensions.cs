@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Net.WebSockets;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace APITasksApp
 {
@@ -37,6 +40,26 @@ namespace APITasksApp
 
                 var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
+            });
+        }
+
+        public static void AddJwtAuth(this WebApplicationBuilder builder)
+        {
+            // Configura a autenticação JWT, permitindo que a API valide tokens JWT para autenticação de usuários.
+            var configuration = builder.Configuration;
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidIssuer = configuration["JWT:Issuer"],
+                    ValidAudience = configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]!))
+
+                };
             });
         }
 
