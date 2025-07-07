@@ -3,18 +3,23 @@ using Application.UserCQ.Commands;
 using Application.UserCQ.ViewModels;
 using AutoMapper;
 using Azure;
+using Domain.Abstractions;
 using Domain.Entity;
 using Infra.Persistence;
 using MediatR;
 
 namespace Application.UserCQ.Handlers
 {
-    public class CreateUserCommandHandler(TasksDbContext context, IMapper mapper) : IRequestHandler<CreateUserCommand, ResponseBase<UserInfoViewModel?>>
+    public class CreateUserCommandHandler(TasksDbContext context, IMapper mapper, IAuthService authService) : IRequestHandler<CreateUserCommand, ResponseBase<UserInfoViewModel?>>
     {
         // Contexto do banco de dados para acessar as entidades de usuário.
         private readonly TasksDbContext _context = context;
         // Mapeador para converter entre entidades e ViewModels.
         private readonly IMapper _mapper = mapper;
+
+        // Serviço de autenticação injetado via injeção de dependência.
+        // Permite gerar tokens JWT e acessar funcionalidades relacionadas à autenticação de usuários.
+        private readonly IAuthService _authService = authService;
 
         // Método responsável por tratar o comando de criação de usuário.
         // Recebe o comando CreateUserCommand e retorna um UserInfoViewModel.
@@ -24,15 +29,28 @@ namespace Application.UserCQ.Handlers
             // Dados de entrada retornados do request de criação de usuário.
             var user = _mapper.Map<User>(request);
 
+            // Gera um refresh token seguro e aleatório para o novo usuário, utilizado para renovação de autenticação.
+            user.RefreshToken = _authService.GenerateRefreshJWT();
+
+            //Passando a senha para o metodo, onde irá fazer a criptografia da senha do usuário.
+            user.PasswordHash = _authService.HashingPassword(request.Password!);
+
+            // Adiciona o novo usuário ao contexto do banco de dados.
             _context.Users.Add(user);
+            // Persiste as alterações no banco de dados, salvando o novo usuário.
             _context.SaveChanges();
+
+            // Mapeia a entidade User para a ViewModel UserInfoViewModel, que será retornada na resposta.
+            var userInfoVM = _mapper.Map<UserInfoViewModel>(user);
+            // Gera um token JWT para o usuário recém-criado e atribui à ViewModel.
+            userInfoVM.TokenJWT = _authService.GenerateJWT(user.Email!, user.UserName!);
 
             // Dados de saída que serão retornados após a criação do usuário.
             return new ResponseBase<UserInfoViewModel>
             {
                 ResponseInfo = null,
                 // Mapeia o usuário criado para a ViewModel UserInfoViewModel.
-                Value = _mapper.Map<UserInfoViewModel>(user)
+                Value = userInfoVM
             };
         }
     }

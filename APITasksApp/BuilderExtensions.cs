@@ -1,13 +1,18 @@
 ﻿using Application.Mappings;
 using Application.UserCQ.Commands;
 using Application.UserCQ.Validators;
+using Domain.Abstractions;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Infra.Persistence;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using System.Net.WebSockets;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Services.AuthService;
+using System.Net.WebSockets;
 using System.Reflection;
+using System.Text;
 
 namespace APITasksApp
 {
@@ -37,6 +42,26 @@ namespace APITasksApp
 
                 var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
+            });
+        }
+
+        public static void AddJwtAuth(this WebApplicationBuilder builder)
+        {
+            // Configura a autenticação JWT, permitindo que a API valide tokens JWT para autenticação de usuários.
+            var configuration = builder.Configuration;
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidIssuer = configuration["JWT:Issuer"],
+                    ValidAudience = configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]!))
+
+                };
             });
         }
 
@@ -71,6 +96,11 @@ namespace APITasksApp
         {
             // Registra os mapeamentos do AutoMapper, permitindo a conversão automática entre entidades e modelos de visualização
             builder.Services.AddAutoMapper(typeof(ProfileMappings).Assembly);
+        }
+
+        public static void AddInjections(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddScoped<IAuthService, AuthService>();
         }
     }
 }

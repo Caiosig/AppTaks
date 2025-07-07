@@ -32,13 +32,14 @@ namespace APITasksApp.Controllers
         /// }
         /// ```
         ///  </remarks>
-        ///  <response code="200">Retorna os dados do usuário criado.</response>
-        ///  <response code="400">Se houver erros de validação no comando.</response>
+        ///  <response code="200">Retorna os dados do usuário criado</response>
+        ///  <response code="400">Se houver erros de validação no comando</response>
         [HttpPost("Create-User")]
+        [ProducesResponseType(typeof(UserInfoViewModel), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<UserInfoViewModel>> CreateUser(CreateUserCommand command)
         {
-            var result = await _mediator.Send(command);
-            return Ok(); // Substitua isso pela lógica real de criação de usuário.
+            return Ok(await _mediator.Send(command));
         }
     }
 }
