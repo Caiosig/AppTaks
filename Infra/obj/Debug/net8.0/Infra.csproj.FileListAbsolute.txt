@@ -15,3 +15,4 @@ C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\n
 C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.pdb
 C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.genruntimeconfig.cache
 C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\ref\Infra.dll
+C:\Users\Caio\OneDrive\Desktop\Estudos udemy\TasksApp_Solution\Infra\obj\Debug\net8.0\Infra.sourcelink.json

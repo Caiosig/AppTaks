@@ -1,15 +1,17 @@
 ﻿using Application.Mappings;
 using Application.UserCQ.Commands;
 using Application.UserCQ.Validators;
+using Domain.Abstractions;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Infra.Persistence;
-using Microsoft.EntityFrameworkCore;
-using System.Net.WebSockets;
-using Microsoft.OpenApi.Models;
-using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Services.AuthService;
+using System.Net.WebSockets;
+using System.Reflection;
 using System.Text;
 
 namespace APITasksApp
@@ -94,6 +96,11 @@ namespace APITasksApp
         {
             // Registra os mapeamentos do AutoMapper, permitindo a conversão automática entre entidades e modelos de visualização
             builder.Services.AddAutoMapper(typeof(ProfileMappings).Assembly);
+        }
+
+        public static void AddInjections(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddScoped<IAuthService, AuthService>();
         }
     }
 }

@@ -25,8 +25,8 @@
             }
             ```
              </remarks>
-             <response code="200">Retorna os dados do usuário criado.</response>
-             <response code="400">Se houver erros de validação no comando.</response>
+             <response code="200">Retorna os dados do usuário criado</response>
+             <response code="400">Se houver erros de validação no comando</response>
         </member>
     </members>
 </doc>
