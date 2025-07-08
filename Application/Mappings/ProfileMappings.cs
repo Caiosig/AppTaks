@@ -14,7 +14,7 @@ namespace Application.Mappings
                 .ForMember(x => x.RefreashTokenExpirationTime, x => x.MapFrom(x => GenerateExpirationTime()))
                 .ForMember(x => x.PasswordHash, x => x.AllowNull());
 
-            CreateMap<User, UserInfoViewModel>()
+            CreateMap<User, RefreshTokenViewModel>()
                 .ForMember(x => x.TokenJWT, x => x.AllowNull());
         }
 

@@ -7,10 +7,12 @@ namespace APITasksApp.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class UserController(IMediator mediator) : ControllerBase
+    public class AuthController(IMediator mediator, IConfiguration configuration) : ControllerBase
     {
         // O construtor recebe uma instância de IMediator, que é usada para enviar comandos e consultas.
         private readonly IMediator _mediator = mediator;
+
+        private readonly IConfiguration _configuration = configuration;
 
         /// <summary>
         /// Rota responsavel por criar um novo usuário.
@@ -39,7 +41,38 @@ namespace APITasksApp.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<UserInfoViewModel>> CreateUser(CreateUserCommand command)
         {
-            return Ok(await _mediator.Send(command));
+            var request = await _mediator.Send(command);
+
+            if (request.ResponseInfo is null)
+            {
+                var userInfo = request.Value;
+
+                if (userInfo is not null)
+                {
+                    var cookieOptionsToken = new CookieOptions
+                    {
+                        HttpOnly = true,
+                        Secure = true,
+                        Expires = DateTime.UtcNow.AddDays(2)
+                    };
+
+                    _ = int.TryParse(configuration["JWT:RefreshTokenExpirationTimeInDays"], out int refreshTokenExpirationTimeInDays);
+
+                    var cookieOptionsRefreshToken = new CookieOptions
+                    {
+                        HttpOnly = true,
+                        Secure = true,
+                        Expires = DateTime.UtcNow.AddDays(refreshTokenExpirationTimeInDays)
+                    };
+
+                    Response.Cookies.Append("jwt", request.Value!.TokenJWT!, cookieOptionsToken);
+                    Response.Cookies.Append("refreshToken", request.Value!.RefreshToken!, cookieOptionsRefreshToken);
+
+                    return Ok(request);
+                }
+            }
+
+            return BadRequest(request);
         }
     }
 }
