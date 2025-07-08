@@ -1,4 +1,6 @@
 ﻿using Domain.Abstractions;
+using Domain.Enum;
+using Infra.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -12,9 +14,11 @@ namespace Services.AuthService
     /// Serviço responsável pela geração de tokens JWT para autenticação de usuários.
     /// Utiliza configurações definidas no appsettings (Issuer, Audience, Key, Expiration).
     /// </summary>
-    public class AuthService(IConfiguration configuration) : IAuthService
+    public class AuthService(IConfiguration configuration, TasksDbContext context) : IAuthService
     {
         private readonly IConfiguration _configuration = configuration;
+
+        private readonly TasksDbContext _context = context;
 
         /// <summary>
         /// Gera um token JWT contendo informações do usuário.
@@ -89,6 +93,31 @@ namespace Services.AuthService
 
             // Retorna a senha hasheada como string hexadecimal.
             return builder.ToString();
+        }
+
+        public ValidationFielUserEnum UniqueEmailAbdUserName(string email, string username)
+        {
+                // Obtém todos os usuários cadastrados no banco de dados.
+                var users = _context.Users.ToList();
+                // Verifica se o e-mail já está cadastrado no banco de dados.
+                var emailExists = users.Exists(u => u.Email == email);
+                // Verifica se o nome de usuário já está cadastrado no banco de dados.
+                var usernameExists = users.Exists(u => u.UserName == username);
+
+                // Se o e-mail já existe, retorna enum indicando e-mail indisponível.
+                if (emailExists)
+                {
+                    return ValidationFielUserEnum.EmailUnavailable;
+                }
+
+                // Se o nome de usuário já existe, retorna enum indicando username indisponível.
+                if (usernameExists)
+                {
+                    return ValidationFielUserEnum.UsernameUnavailable;
+                }
+
+                // Se ambos estão disponíveis, retorna enum indicando ambos disponíveis.
+                return ValidationFielUserEnum.UsernameAndEmailUnavailable;
         }
     }
 }
