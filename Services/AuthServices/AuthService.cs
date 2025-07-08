@@ -45,7 +45,7 @@ namespace Services.AuthService
 
             _ = int.TryParse(_configuration["JWT:TokenExpirationTimeInDays"], out int tokenExpirationTimeInDays);
 
-            var token = new JwtSecurityToken(issuer : issuer, audience: audience, claims: claims, expires: DateTime.Now.AddDays(tokenExpirationTimeInDays), signingCredentials: credentials);
+            var token = new JwtSecurityToken(issuer: issuer, audience: audience, claims: claims, expires: DateTime.Now.AddDays(tokenExpirationTimeInDays), signingCredentials: credentials);
 
             var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -97,27 +97,29 @@ namespace Services.AuthService
 
         public ValidationFielUserEnum UniqueEmailAbdUserName(string email, string username)
         {
-                // Obtém todos os usuários cadastrados no banco de dados.
-                var users = _context.Users.ToList();
-                // Verifica se o e-mail já está cadastrado no banco de dados.
-                var emailExists = users.Exists(u => u.Email == email);
-                // Verifica se o nome de usuário já está cadastrado no banco de dados.
-                var usernameExists = users.Exists(u => u.UserName == username);
+            // Obtém todos os usuários cadastrados no banco de dados.
+            var users = _context.Users.ToList();
+            // Verifica se o e-mail já está cadastrado no banco de dados.
+            var emailExists = users.Exists(u => u.Email == email);
+            // Verifica se o nome de usuário já está cadastrado no banco de dados.
+            var usernameExists = users.Exists(u => u.UserName == username);
 
-                // Se o e-mail já existe, retorna enum indicando e-mail indisponível.
-                if (emailExists)
-                {
-                    return ValidationFielUserEnum.EmailUnavailable;
-                }
-
-                // Se o nome de usuário já existe, retorna enum indicando username indisponível.
-                if (usernameExists)
-                {
-                    return ValidationFielUserEnum.UsernameUnavailable;
-                }
-
-                // Se ambos estão disponíveis, retorna enum indicando ambos disponíveis.
+            // Se ambos existem, retorna enum indicando ambos indisponíveis.
+            if (emailExists && usernameExists) 
+            {
                 return ValidationFielUserEnum.UsernameAndEmailUnavailable;
+            }
+            else if (emailExists) // Se o e-mail já existe, retorna enum indicando e-mail indisponível.
+            {
+                return ValidationFielUserEnum.EmailUnavailable;
+            }
+            else if (usernameExists) // Se o nome de usuário já existe, retorna enum indicando username indisponível.
+            {
+                return ValidationFielUserEnum.UsernameUnavailable;
+            }
+
+            // Se ambos estão disponíveis, retorna enum indicando ambos disponíveis.
+            return ValidationFielUserEnum.UsernameAndEmailAvailable;
         }
     }
 }

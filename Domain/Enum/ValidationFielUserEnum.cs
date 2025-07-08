@@ -10,6 +10,7 @@ namespace Domain.Enum
     {
         UsernameUnavailable,
         EmailUnavailable,
-        UsernameAndEmailUnavailable
+        UsernameAndEmailUnavailable,
+        UsernameAndEmailAvailable
     }
 }

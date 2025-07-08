@@ -85,16 +85,16 @@ namespace Application.UserCQ.Handlers
             _context.SaveChanges();
 
             // Mapeia a entidade User para a ViewModel RefreshTokenViewModel, que será retornada na resposta.
-            var userInfoVM = _mapper.Map<RefreshTokenViewModel>(user);
+            var refreshTokenVM = _mapper.Map<RefreshTokenViewModel>(user);
             // Gera um token JWT para o usuário recém-criado e atribui à ViewModel.
-            userInfoVM.TokenJWT = _authService.GenerateJWT(user.Email!, user.UserName!);
+            refreshTokenVM.TokenJWT = _authService.GenerateJWT(user.Email!, user.UserName!);
 
             // Dados de saída que serão retornados após a criação do usuário.
             return new ResponseBase<RefreshTokenViewModel>
             {
                 ResponseInfo = null,
                 // Mapeia o usuário criado para a ViewModel RefreshTokenViewModel.
-                Value = userInfoVM
+                Value = refreshTokenVM
             };
         }
     }

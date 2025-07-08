@@ -3,6 +3,21 @@
   "WorkspaceRootPath": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{97207750-6972-232F-BB7B-6106666106AF}|Services\\Services.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\services\\authservices\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97207750-6972-232F-BB7B-6106666106AF}|Services\\Services.csproj|solutionrelative:services\\authservices\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\application\\usercq\\handlers\\createusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usercq\\handlers\\createusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Caio\\AppData\\Local\\Temp\\jwrroyz2..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\application\\mappings\\profilemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\mappings\\profilemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,12 +26,14 @@
       "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usercq\\viewmodels\\refreshtokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\domain\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Caio\\AppData\\Local\\Temp\\jwrroyz2..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Caio\\AppData\\Local\\Temp\\jwrroyz2..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +43,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +55,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ProfileMappings.cs",
               "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\Mappings\\ProfileMappings.cs",
               "RelativeDocumentMoniker": "Application\\Mappings\\ProfileMappings.cs",
               "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\Mappings\\ProfileMappings.cs",
               "RelativeToolTip": "Application\\Mappings\\ProfileMappings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:39:05.966Z",
+              "WhenOpened": "2025-07-08T13:59:06.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "RefreshTokenViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\ViewModels\\RefreshTokenViewModel.cs",
               "RelativeDocumentMoniker": "Application\\UserCQ\\ViewModels\\RefreshTokenViewModel.cs",
               "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\ViewModels\\RefreshTokenViewModel.cs",
               "RelativeToolTip": "Application\\UserCQ\\ViewModels\\RefreshTokenViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:30:21.349Z",
+              "WhenOpened": "2025-07-08T13:58:34.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Domain\\Entity\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entity\\User.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Domain\\Entity\\User.cs",
+              "RelativeToolTip": "Domain\\Entity\\User.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:58:22.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateUserCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\Handlers\\CreateUserCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\UserCQ\\Handlers\\CreateUserCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\Handlers\\CreateUserCommandHandler.cs",
+              "RelativeToolTip": "Application\\UserCQ\\Handlers\\CreateUserCommandHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:46:38.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Services\\AuthServices\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthServices\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Services\\AuthServices\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthServices\\AuthService.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAA6wG4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T13:45:01.911Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BuilderExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\BuilderExtensions.cs",
-              "RelativeDocumentMoniker": "APITasksApp\\BuilderExtensions.cs",
-              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\BuilderExtensions.cs",
-              "RelativeToolTip": "APITasksApp\\BuilderExtensions.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAowE8AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T13:29:25.015Z",
+              "Title": "SQLQuery1.sql ",
+              "DocumentMoniker": "C:\\Users\\Caio\\AppData\\Local\\Temp\\jwrroyz2..sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\jwrroyz2..sql",
+              "ToolTip": "SQLQuery1.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-08T13:42:24.985Z",
               "EditorCaption": ""
             },
             {
@@ -83,7 +137,7 @@
               "RelativeDocumentMoniker": "APITasksApp\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Controllers\\AuthController.cs",
               "RelativeToolTip": "APITasksApp\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwEoAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAwwC8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T13:26:40.22Z",
               "EditorCaption": ""

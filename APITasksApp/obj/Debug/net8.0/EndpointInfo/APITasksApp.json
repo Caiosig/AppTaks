@@ -163,17 +163,9 @@
             "type": "string",
             "nullable": true
           },
-          "refreshToken": {
-            "type": "string",
-            "nullable": true
-          },
           "refreashTokenExpirationTime": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
-          },
-          "tokenJWT": {
-            "type": "string",
             "nullable": true
           }
         },
