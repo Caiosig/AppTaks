@@ -16,6 +16,8 @@ namespace Application.Mappings
 
             CreateMap<User, RefreshTokenViewModel>()
                 .ForMember(x => x.TokenJWT, x => x.AllowNull());
+
+            CreateMap<RefreshTokenViewModel, UserInfoViewModel>();
         }
 
         private DateTime GenerateExpirationTime()
