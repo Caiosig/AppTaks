@@ -14,10 +14,10 @@
     "version": "V1"
   },
   "paths": {
-    "/User/Create-User": {
+    "/Auth/Create-User": {
       "post": {
         "tags": [
-          "User"
+          "Auth"
         ],
         "summary": "Rota responsavel por criar um novo usuário.",
         "description": "Exemplo de request:\r\n```\r\nPOST /User/Create-User\r\n{\r\n \"name\": \"Caio\",\r\n \"surname\": \"Godinho\",   \r\n \"username\": \"caiosig\",\r\n \"email\": \"teste@teste.com\",\r\n \"password\": \"123456\"\r\n}\r\n```",
@@ -163,17 +163,9 @@
             "type": "string",
             "nullable": true
           },
-          "refreshToken": {
-            "type": "string",
-            "nullable": true
-          },
           "refreashTokenExpirationTime": {
             "type": "string",
             "format": "date-time",
-            "nullable": true
-          },
-          "tokenJWT": {
-            "type": "string",
             "nullable": true
           }
         },

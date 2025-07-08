@@ -4,7 +4,7 @@
         <name>APITasksApp</name>
     </assembly>
     <members>
-        <member name="M:APITasksApp.Controllers.UserController.CreateUser(Application.UserCQ.Commands.CreateUserCommand)">
+        <member name="M:APITasksApp.Controllers.AuthController.CreateUser(Application.UserCQ.Commands.CreateUserCommand)">
             <summary>
             Rota responsavel por criar um novo usuário.
             </summary>

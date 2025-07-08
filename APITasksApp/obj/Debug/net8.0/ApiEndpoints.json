@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "APITasksApp.Controllers.UserController",
+    "ContainingType": "APITasksApp.Controllers.AuthController",
     "Method": "CreateUser",
-    "RelativePath": "User/Create-User",
+    "RelativePath": "Auth/Create-User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
