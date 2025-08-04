@@ -2,7 +2,6 @@
 using Application.UserCQ.Commands;
 using Application.UserCQ.ViewModels;
 using AutoMapper;
-using Azure;
 using Domain.Abstractions;
 using Domain.Entity;
 using Domain.Enum;
@@ -33,7 +32,7 @@ namespace Application.UserCQ.Handlers
             {
                 return new ResponseBase<RefreshTokenViewModel>
                 {
-                    ResponseInfo = new ()
+                    ResponseInfo = new()
                     {
                         Title = "Email já cadastrado.",
                         ErrorDescription = "O email apresentado já esta sendo utilizado, por favor, tente outro e-mail.",

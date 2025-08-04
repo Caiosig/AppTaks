@@ -28,5 +28,26 @@
              <response code="200">Retorna os dados do usuário criado</response>
              <response code="400">Se houver erros de validação no comando</response>
         </member>
+        <member name="M:APITasksApp.Controllers.AuthController.Login(Application.UserCQ.Commands.LoginUserCommand)">
+            <summary>
+            Rota responsável por autenticar um usuário.
+            </summary>
+            <param name="command">
+            Um objeto LoginUserCommand contendo as credenciais do usuário.
+            </param>
+            <returns>Os dados do usuário autenticado, incluindo tokens de autenticação.</returns>
+            <remarks>
+            Exemplo de request:
+            ```
+            POST /Auth/Login
+            {
+             "email": "teste@teste.com",
+             "password": "123456"
+            }
+            ```
+            </remarks>
+            <response code="200">Retorna os dados do usuário autenticado</response>
+            <response code="400">Se houver erros de validação no comando</response>
+        </member>
     </members>
 </doc>
