@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APITasksApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+557fc7cd018c345585b9ad0c8df77c56aa891976")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26e7ec594a8a9dd69a123887644d0d4a413ed197")]
 [assembly: System.Reflection.AssemblyProductAttribute("APITasksApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APITasksApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

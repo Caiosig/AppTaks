@@ -87,6 +87,108 @@
           }
         }
       }
+    },
+    "/Auth/Login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Rota responsável por autenticar um usuário.",
+        "description": "Exemplo de request:\r\n```\r\nPOST /Auth/Login\r\n{\r\n \"email\": \"teste@teste.com\",\r\n \"password\": \"123456\"\r\n}\r\n```",
+        "requestBody": {
+          "description": "Um objeto LoginUserCommand contendo as credenciais do usuário.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna os dados do usuário autenticado",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfoViewModelResponseBase"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfoViewModelResponseBase"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfoViewModelResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Se houver erros de validação no comando"
+          }
+        }
+      }
+    },
+    "/Auth/RefreshToken": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefreshTokenViewModelResponseBase"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefreshTokenViewModelResponseBase"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefreshTokenViewModelResponseBase"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -111,6 +213,20 @@
             "nullable": true
           },
           "username": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginUserCommand": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
             "type": "string",
             "nullable": true
           }
@@ -144,6 +260,85 @@
         },
         "additionalProperties": { }
       },
+      "RefreshTokenCommand": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenViewModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreashTokenExpirationTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "tokenJWT": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenViewModelResponseBase": {
+        "type": "object",
+        "properties": {
+          "responseInfo": {
+            "$ref": "#/components/schemas/ResponseInfo"
+          },
+          "value": {
+            "$ref": "#/components/schemas/RefreshTokenViewModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResponseInfo": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "errorDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "httpStatus": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "UserInfoViewModel": {
         "type": "object",
         "properties": {
@@ -167,6 +362,18 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserInfoViewModelResponseBase": {
+        "type": "object",
+        "properties": {
+          "responseInfo": {
+            "$ref": "#/components/schemas/ResponseInfo"
+          },
+          "value": {
+            "$ref": "#/components/schemas/UserInfoViewModel"
           }
         },
         "additionalProperties": false
