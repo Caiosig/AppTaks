@@ -5,6 +5,9 @@ using Domain.Abstractions;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Infra.Persistence;
+using Infra.Repository.IRepositories;
+using Infra.Repository.Repositories;
+using Infra.Repository.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -119,6 +122,13 @@ namespace APITasksApp
         public static void AddInjections(this WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IAuthService, AuthService>();
+        }
+
+        public static void AddRepositories(this WebApplicationBuilder builder)
+        {
+            // Registra os repositórios necessários para acessar as entidades do banco de dados
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

@@ -15,6 +15,7 @@ builder.AddMappings();
 builder.AddSwaggerDocs();
 builder.AddJwtAuth();
 builder.AddInjections();
+builder.AddRepositories();
 
 var app = builder.Build();
 

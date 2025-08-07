@@ -3,7 +3,7 @@ using Application.UserCQ.Commands;
 using Application.UserCQ.ViewModels;
 using AutoMapper;
 using Domain.Abstractions;
-using Infra.Persistence;
+using Infra.Repository.UnitOfWork;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 
@@ -15,7 +15,7 @@ namespace Application.UserCQ.Handlers
     /// </summary>
     public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, ResponseBase<RefreshTokenViewModel>>
     {
-        private readonly TasksDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IAuthService _authService;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
@@ -27,9 +27,9 @@ namespace Application.UserCQ.Handlers
         /// <param name="authService">Serviço de autenticação.</param>
         /// <param name="configuration">Configurações da aplicação.</param>
         /// <param name="mapper">Mapeador para conversão de entidades.</param>
-        public RefreshTokenCommandHandler(TasksDbContext context, IAuthService authService, IConfiguration configuration, IMapper mapper)
+        public RefreshTokenCommandHandler(IUnitOfWork unitOfWork, IAuthService authService, IConfiguration configuration, IMapper mapper)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
             _authService = authService;
             _configuration = configuration;
             _mapper = mapper;
@@ -45,7 +45,7 @@ namespace Application.UserCQ.Handlers
         public async Task<ResponseBase<RefreshTokenViewModel>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
         {
             // Busca o usuário pelo nome de usuário informado.
-            var user = _context.Users.FirstOrDefault(x => x.UserName == request.Username);
+            var user = await _unitOfWork.UserRepository.Get(x => x.UserName == request.Username);
 
             // Valida se o usuário existe, se o refresh token é válido e se não está expirado.
             if (user is null || user.RefreshToken != request.RefreshToken || user.RefreashTokenExpirationTime < DateTime.Now)
@@ -70,7 +70,7 @@ namespace Application.UserCQ.Handlers
 
             // Atualiza o tempo de expiração do refresh token.
             user.RefreashTokenExpirationTime = DateTime.Now.AddDays(refreshTokenExpirationTimeInDays);
-            _context.SaveChanges();
+            _unitOfWork.Commit();
 
             // Mapeia o usuário para o ViewModel de resposta.
             var refreshTokenVM = _mapper.Map<RefreshTokenViewModel>(user);
@@ -80,7 +80,7 @@ namespace Application.UserCQ.Handlers
             // Retorna resposta de sucesso com os novos tokens e dados do usuário.
             return new ResponseBase<RefreshTokenViewModel>
             {
-                ResponseInfo = null, 
+                ResponseInfo = null,
                 Value = refreshTokenVM
             };
         }
