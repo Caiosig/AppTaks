@@ -1,4 +1,5 @@
-using APITasksApp;
+using APITasksApp.Controllers;
+using APITasksApp.Extensions;
 using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,5 +32,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.WorkSpacesRoutes();
 
 app.Run();

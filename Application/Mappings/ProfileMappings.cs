@@ -1,5 +1,6 @@
 ﻿using Application.UserCQ.Commands;
 using Application.UserCQ.ViewModels;
+using Application.WorkspaceCQ.ViewModels;
 using AutoMapper;
 using Domain.Entity;
 

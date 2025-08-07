@@ -18,16 +18,19 @@ namespace Infra.Repository.UnitOfWork
         /// </summary>
         /// <param name="context">Instância do TasksDbContext.</param>
         /// <param name="userRepository">Instância do repositório de usuários.</param>
-        public UnitOfWork(TasksDbContext context, IUserRepository userRepository)
+        public UnitOfWork(TasksDbContext context, IUserRepository userRepository, IWorkSpaceRepository workSpaceRepository)
         {
             _context = context;
             UserRepository = userRepository ?? new UserRepository(context);
+            WorkSpaceRepository = workSpaceRepository ?? new WorkSpaceRepository(context);
         }
 
         /// <summary>
         /// Repositório de usuários utilizado para operações relacionadas à entidade User.
         /// </summary>
         public IUserRepository UserRepository { get; }
+
+        public IWorkSpaceRepository WorkSpaceRepository {get; }
 
         /// <summary>
         /// Persiste todas as alterações realizadas no contexto do banco de dados.

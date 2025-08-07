@@ -13,6 +13,8 @@ namespace Infra.Repository.UnitOfWork
         /// </summary>
         IUserRepository UserRepository { get; }
 
+        IWorkSpaceRepository WorkSpaceRepository { get; }
+
         /// <summary>
         /// Persiste todas as alterações realizadas no contexto do banco de dados de forma atômica.
         /// </summary>
