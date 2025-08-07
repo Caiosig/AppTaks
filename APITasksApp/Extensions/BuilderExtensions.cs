@@ -12,12 +12,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Services.AuthService;
-using System.Net.WebSockets;
+using Services.AuthServices;
 using System.Reflection;
 using System.Text;
 
-namespace APITasksApp
+namespace APITasksApp.Extensions
 {
     public static class BuilderExtensions
     {
@@ -129,6 +128,8 @@ namespace APITasksApp
             // Registra os repositórios necessários para acessar as entidades do banco de dados
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IWorkSpaceRepository, WorkSpaceRepository>();
+
         }
     }
 }

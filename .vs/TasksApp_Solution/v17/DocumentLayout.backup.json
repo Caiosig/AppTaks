@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\controllers\\workspacescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\controllers\\workspacescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\application\\usercq\\handlers\\refreshtokencommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usercq\\handlers\\refreshtokencommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\application\\usercq\\handlers\\loginusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\usercq\\handlers\\loginusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|c:\\users\\caio\\onedrive\\desktop\\estudos udemy\\tasksapp_solution\\apitasksapp\\extensions\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD380EC-0285-4956-A454-1D022C94C070}|APITasksApp\\APITasksApp.csproj|solutionrelative:apitasksapp\\extensions\\builderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,40 +35,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BuilderExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\BuilderExtensions.cs",
-              "RelativeDocumentMoniker": "APITasksApp\\BuilderExtensions.cs",
-              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\BuilderExtensions.cs",
-              "RelativeToolTip": "APITasksApp\\BuilderExtensions.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAA0wIIAAABCAAAAAAAAAA==",
+              "Title": "WorkSpacesController.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Controllers\\WorkSpacesController.cs",
+              "RelativeDocumentMoniker": "APITasksApp\\Controllers\\WorkSpacesController.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Controllers\\WorkSpacesController.cs",
+              "RelativeToolTip": "APITasksApp\\Controllers\\WorkSpacesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T15:40:51.037Z",
+              "WhenOpened": "2025-08-07T13:57:06.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RefreshTokenCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\Handlers\\RefreshTokenCommandHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UserCQ\\Handlers\\RefreshTokenCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\Handlers\\RefreshTokenCommandHandler.cs",
-              "RelativeToolTip": "Application\\UserCQ\\Handlers\\RefreshTokenCommandHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Program.cs",
+              "RelativeDocumentMoniker": "APITasksApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Program.cs",
+              "RelativeToolTip": "APITasksApp\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T15:38:37.308Z",
+              "WhenOpened": "2025-08-07T13:54:54.173Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginUserCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\Handlers\\LoginUserCommandHandler.cs",
-              "RelativeDocumentMoniker": "Application\\UserCQ\\Handlers\\LoginUserCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\Application\\UserCQ\\Handlers\\LoginUserCommandHandler.cs",
-              "RelativeToolTip": "Application\\UserCQ\\Handlers\\LoginUserCommandHandler.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAwwE8AAAASAAAAAAAAAA==",
+              "Title": "BuilderExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Extensions\\BuilderExtensions.cs",
+              "RelativeDocumentMoniker": "APITasksApp\\Extensions\\BuilderExtensions.cs",
+              "ToolTip": "C:\\Users\\Caio\\OneDrive\\Desktop\\Estudos udemy\\TasksApp_Solution\\APITasksApp\\Extensions\\BuilderExtensions.cs",
+              "RelativeToolTip": "APITasksApp\\Extensions\\BuilderExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T15:33:42.334Z",
+              "WhenOpened": "2025-08-05T15:40:51.037Z",
               "EditorCaption": ""
             }
           ]

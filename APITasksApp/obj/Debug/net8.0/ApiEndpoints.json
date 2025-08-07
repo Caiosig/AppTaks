@@ -85,5 +85,33 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "APITasksApp.Controllers.WorkSpacesController\u002B\u003C\u003Ec",
+    "Method": "\u003CWorkSpacesRoutes\u003Eb__0_0",
+    "RelativePath": "Workspaces/create-user-minimal-api",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.UserCQ.Commands.CreateUserCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Response.ResponseBase\u00601[[Application.UserCQ.ViewModels.RefreshTokenViewModel, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "WorkSpaces"
+    ],
+    "EndpointName": "WorkSpaces"
   }
 ]

@@ -189,6 +189,36 @@
           }
         }
       }
+    },
+    "/Workspaces/create-user-minimal-api": {
+      "get": {
+        "tags": [
+          "WorkSpaces"
+        ],
+        "operationId": "WorkSpaces",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefreshTokenViewModelResponseBase"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
