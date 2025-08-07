@@ -4,6 +4,7 @@ using Application.UserCQ.ViewModels;
 using AutoMapper;
 using Domain.Abstractions;
 using Infra.Persistence;
+using Infra.Repository.UnitOfWork;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
@@ -16,7 +17,7 @@ namespace Application.UserCQ.Handlers
     /// </summary>
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, ResponseBase<RefreshTokenViewModel>>
     {
-        private readonly TasksDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IAuthService _authService;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
@@ -28,9 +29,9 @@ namespace Application.UserCQ.Handlers
         /// <param name="authService">Serviço de autenticação.</param>
         /// <param name="configuration">Configurações da aplicação.</param>
         /// <param name="mapper">Mapeador para conversão de entidades.</param>
-        public LoginUserCommandHandler(TasksDbContext context, IAuthService authService, IConfiguration configuration, IMapper mapper)
+        public LoginUserCommandHandler(IUnitOfWork unitOfWork, IAuthService authService, IConfiguration configuration, IMapper mapper)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
             _authService = authService;
             _configuration = configuration;
             _mapper = mapper;
@@ -46,7 +47,7 @@ namespace Application.UserCQ.Handlers
         public async Task<ResponseBase<RefreshTokenViewModel>> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             // Busca o usuário pelo e-mail informado
-            var user = _context.Users.FirstOrDefault(x => x.Email == request.Email);
+            var user = await _unitOfWork.UserRepository.Get(x => x.Email == request.Email);
 
             // Se o usuário não for encontrado, retorna resposta de erro
             if (user is null)
@@ -84,8 +85,10 @@ namespace Application.UserCQ.Handlers
             // Gera novo refresh token e JWT
             user.RefreshToken = _authService.GenerateRefreshJWT();
             user.RefreashTokenExpirationTime = DateTime.UtcNow.AddDays(refreshTokenExpirationTimeInDays);
-            _context.Update(user);
-            _context.SaveChanges();
+
+            // Atualiza o usuário no repositório com o novo refresh token e data de expiração
+            await _unitOfWork.UserRepository.Update(user);
+            _unitOfWork.Commit();
 
             // Mapeia o usuário para o ViewModel de resposta
             RefreshTokenViewModel refreshTokenVM = _mapper.Map<RefreshTokenViewModel>(user);

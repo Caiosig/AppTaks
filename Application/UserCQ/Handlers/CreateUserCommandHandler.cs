@@ -6,14 +6,16 @@ using Domain.Abstractions;
 using Domain.Entity;
 using Domain.Enum;
 using Infra.Persistence;
+using Infra.Repository.IRepositories;
+using Infra.Repository.UnitOfWork;
 using MediatR;
 
 namespace Application.UserCQ.Handlers
 {
-    public class CreateUserCommandHandler(TasksDbContext context, IMapper mapper, IAuthService authService) : IRequestHandler<CreateUserCommand, ResponseBase<RefreshTokenViewModel?>>
+    public class CreateUserCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IAuthService authService) : IRequestHandler<CreateUserCommand, ResponseBase<RefreshTokenViewModel?>>
     {
         // Contexto do banco de dados para acessar as entidades de usuário.
-        private readonly TasksDbContext _context = context;
+        private readonly IUnitOfWork _unitOfWork = unitOfWork;
         // Mapeador para converter entre entidades e ViewModels.
         private readonly IMapper _mapper = mapper;
 
@@ -79,9 +81,9 @@ namespace Application.UserCQ.Handlers
             user.PasswordHash = _authService.HashingPassword(request.Password!);
 
             // Adiciona o novo usuário ao contexto do banco de dados.
-            _context.Users.Add(user);
+            await _unitOfWork.UserRepository.Create(user);
             // Persiste as alterações no banco de dados, salvando o novo usuário.
-            _context.SaveChanges();
+            _unitOfWork.Commit();
 
             // Mapeia a entidade User para a ViewModel RefreshTokenViewModel, que será retornada na resposta.
             var refreshTokenVM = _mapper.Map<RefreshTokenViewModel>(user);
