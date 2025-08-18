@@ -2,7 +2,7 @@
 
 namespace Application.WorkspaceCQ.ViewModels
 {
-    public record CreateWorkspaceViewModel
+    public record WorkspaceViewModel
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }

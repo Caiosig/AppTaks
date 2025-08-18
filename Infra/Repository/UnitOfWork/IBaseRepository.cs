@@ -40,7 +40,13 @@ namespace Infra.Repository.UnitOfWork
         /// <summary>
         /// Exclui uma entidade pelo identificador.
         /// </summary>
-        /// <param name="id">Identificador único da entidade.</param>
-        Task Delete(Guid id);
+        /// <param name="entity">Identificador único da entidade.</param>
+        Task Delete(T entity);
+
+        /// <summary>
+        /// Exclui um range de entidade pelo identificador.
+        /// </summary>
+        /// <param name="range">Identificador único da entidade.</param>
+        Task DeleteRange(List<T> range);
     }
 }

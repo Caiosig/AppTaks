@@ -68,10 +68,21 @@ namespace Infra.Repository.UnitOfWork
         /// Exclui uma entidade pelo identificador.
         /// </summary>
         /// <param name="id">Identificador único da entidade.</param>
-        public Task Delete(Guid id)
+        public Task Delete(T entity)
         {
-            _context.Remove(id);
+            _context.Set<T>().Remove(entity);
             return Task.CompletedTask;
         }
+
+        /// <summary>
+        /// Exclui uma range de entidades.
+        /// </summary>
+        /// <param name="id">Identificador único da entidade.</param>
+        public Task DeleteRange(List<T> range)
+        {
+            _context.Set<T>().RemoveRange(range);
+            return Task.CompletedTask;
+        }
+
     }
 }

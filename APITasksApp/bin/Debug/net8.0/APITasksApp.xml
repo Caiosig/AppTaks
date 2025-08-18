@@ -49,5 +49,60 @@
             <response code="200">Retorna os dados do usuário autenticado</response>
             <response code="400">Se houver erros de validação no comando</response>
         </member>
+        <member name="T:APITasksApp.Controllers.WorkSpacesController">
+            <summary>
+            Controlador de rotas para operações relacionadas a Workspaces.
+            Define endpoints para criação, edição, exclusão, consulta e listagem de workspaces utilizando o padrão minimal API.
+            Todas as operações utilizam o MediatR para delegar a lógica de negócio aos respectivos handlers de comando.
+            </summary>
+        </member>
+        <member name="M:APITasksApp.Controllers.WorkSpacesController.WorkSpacesRoutes(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Registra as rotas relacionadas a Workspaces no pipeline da aplicação.
+            </summary>
+            <param name="app">Instância do WebApplication.</param>
+        </member>
+        <member name="M:APITasksApp.Controllers.WorkSpacesController.CreateWorkspace(MediatR.IMediator,Application.WorkspaceCQ.Commands.CreateWorkspaceCommand)">
+            <summary>
+            Endpoint para criar um novo workspace.
+            </summary>
+            <param name="_mediator">Instância do MediatR para envio do comando.</param>
+            <param name="command">Comando de criação do workspace.</param>
+            <returns>Resultado da operação, incluindo o workspace criado ou erro de validação.</returns>
+        </member>
+        <member name="M:APITasksApp.Controllers.WorkSpacesController.EditWorkspace(MediatR.IMediator,Application.WorkspaceCQ.Commands.EditWorkspaceCommand)">
+            <summary>
+            Endpoint para editar um workspace existente.
+            </summary>
+            <param name="_mediator">Instância do MediatR para envio do comando.</param>
+            <param name="editWorkspaceCommand">Comando de edição do workspace.</param>
+            <returns>Resultado da operação, incluindo o workspace editado ou erro de validação.</returns>
+        </member>
+        <member name="M:APITasksApp.Controllers.WorkSpacesController.DeleteWorkspace(MediatR.IMediator,System.Guid)">
+            <summary>
+            Endpoint para excluir um workspace pelo identificador.
+            </summary>
+            <param name="_mediator">Instância do MediatR para envio do comando.</param>
+            <param name="workspaceId">Identificador do workspace a ser excluído.</param>
+            <returns>Resultado da operação, sem conteúdo em caso de sucesso ou erro de validação.</returns>
+        </member>
+        <member name="M:APITasksApp.Controllers.WorkSpacesController.GetWorkspace(MediatR.IMediator,System.Guid)">
+            <summary>
+            Endpoint para obter um workspace pelo identificador.
+            </summary>
+            <param name="_mediator">Instância do MediatR para envio do comando.</param>
+            <param name="workspaceId">Identificador do workspace a ser consultado.</param>
+            <returns>Resultado da operação, incluindo o workspace encontrado ou erro de validação.</returns>
+        </member>
+        <member name="M:APITasksApp.Controllers.WorkSpacesController.GetAllWorkspace(MediatR.IMediator,System.Guid,System.Int32,System.Int32)">
+            <summary>
+            Endpoint para obter todos os workspaces.
+            </summary>
+            <param name="_mediator">Instância do MediatR para envio do comando.</param>
+            <param name="userId"></param>
+            <param name="pageSize"></param>
+            <param name="pageIndex"></param>
+            <returns>Resultado da operação, incluindo a lista de workspaces ou erro de validação.</returns>
+        </member>
     </members>
 </doc>

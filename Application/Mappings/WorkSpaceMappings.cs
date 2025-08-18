@@ -8,7 +8,7 @@ namespace Application.Mappings
     {
         public WorkSpaceMappings()
         {
-            CreateMap<WorkSpace, CreateWorkspaceViewModel>()
+            CreateMap<WorkSpace, WorkspaceViewModel>()
                 .ForMember(x => x.UserId, x => x.MapFrom(x => x.User!.Id));
         }
     }

@@ -190,17 +190,18 @@
         }
       }
     },
-    "/Workspaces/create-user-minimal-api": {
-      "get": {
+    "/Workspaces/create-workspace": {
+      "post": {
         "tags": [
           "WorkSpaces"
         ],
-        "operationId": "WorkSpaces",
+        "summary": "Endpoint para criar um novo workspace.",
         "requestBody": {
+          "description": "Comando de criação do workspace.",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateUserCommand"
+                "$ref": "#/components/schemas/CreateWorkspaceCommand"
               }
             }
           },
@@ -208,14 +209,126 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RefreshTokenViewModelResponseBase"
-                }
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Workspaces/edit-workspace": {
+      "put": {
+        "tags": [
+          "WorkSpaces"
+        ],
+        "summary": "Endpoint para editar um workspace existente.",
+        "requestBody": {
+          "description": "Comando de edição do workspace.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditWorkspaceCommand"
               }
             }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Workspaces/delete-workspace/{workspaceId}": {
+      "delete": {
+        "tags": [
+          "WorkSpaces"
+        ],
+        "summary": "Endpoint para excluir um workspace pelo identificador.",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "Identificador do workspace a ser excluído.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Workspaces/get-workspace/{workspaceId}": {
+      "get": {
+        "tags": [
+          "WorkSpaces"
+        ],
+        "summary": "Endpoint para obter um workspace pelo identificador.",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "Identificador do workspace a ser consultado.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Workspaces/get-all-workspace": {
+      "get": {
+        "tags": [
+          "WorkSpaces"
+        ],
+        "summary": "Endpoint para obter todos os workspaces.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -245,6 +358,38 @@
           "username": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateWorkspaceCommand": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditWorkspaceCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusItemEnum"
           }
         },
         "additionalProperties": false
@@ -368,6 +513,15 @@
           }
         },
         "additionalProperties": false
+      },
+      "StatusItemEnum": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "UserInfoViewModel": {
         "type": "object",

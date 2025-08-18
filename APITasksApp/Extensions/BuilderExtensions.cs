@@ -129,6 +129,7 @@ namespace APITasksApp.Extensions
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IWorkSpaceRepository, WorkSpaceRepository>();
+            builder.Services.AddScoped<IListsCardsRepository, ListsCardsRepository>();
 
         }
     }
