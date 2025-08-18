@@ -85,5 +85,140 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "APITasksApp.Controllers.WorkSpacesController",
+    "Method": "CreateWorkspace",
+    "RelativePath": "Workspaces/create-workspace",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.WorkspaceCQ.Commands.CreateWorkspaceCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "WorkSpaces"
+    ]
+  },
+  {
+    "ContainingType": "APITasksApp.Controllers.WorkSpacesController",
+    "Method": "DeleteWorkspace",
+    "RelativePath": "Workspaces/delete-workspace/{workspaceId}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workspaceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "WorkSpaces"
+    ]
+  },
+  {
+    "ContainingType": "APITasksApp.Controllers.WorkSpacesController",
+    "Method": "EditWorkspace",
+    "RelativePath": "Workspaces/edit-workspace",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editWorkspaceCommand",
+        "Type": "Application.WorkspaceCQ.Commands.EditWorkspaceCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "WorkSpaces"
+    ]
+  },
+  {
+    "ContainingType": "APITasksApp.Controllers.WorkSpacesController",
+    "Method": "GetAllWorkspace",
+    "RelativePath": "Workspaces/get-all-workspace",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "WorkSpaces"
+    ]
+  },
+  {
+    "ContainingType": "APITasksApp.Controllers.WorkSpacesController",
+    "Method": "GetWorkspace",
+    "RelativePath": "Workspaces/get-workspace/{workspaceId}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workspaceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "WorkSpaces"
+    ]
   }
 ]

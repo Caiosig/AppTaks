@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Services.AuthService
+namespace Services.AuthServices
 {
     /// <summary>
     /// Serviço responsável pela geração de tokens JWT para autenticação de usuários.

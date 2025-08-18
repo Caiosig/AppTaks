@@ -15,7 +15,7 @@ namespace Domain.Entity
         [Required]
         public User? User { get; set; }
         public ICollection<ListCard> ListsCards { get; set; }
-        public StatusItemEnum Status { get; set; } = StatusItemEnum.Active;
+        public StatusItemEnum? Status { get; set; } = StatusItemEnum.Active;
         public DateTime CreateAt { get; set; } = DateTime.Now;
     }
 }
